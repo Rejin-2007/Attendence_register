@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendence Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Attendence Register</h1>
+        <div class="date-text">
+           <h4>Date: <span id="date"></span></h4>
+        </div>
+    </header>
+    <br>
+    <main class="container">
+        <form class="addForm" id="addForm">
+            <label for="addItem">Add Item</label>
+            <input id="addItem" type="text" placeholder="  Add Student Here" required />
+        </form>
+        <form class="searchForm" id="searchForm">
+            <label for="search">Search</label>
+            <input id="search" type="text" placeholder="  Search Here" />
+        </form>
+        <ul id="itemList"></ul>
+        <h2 class="noItemsMessage"><p id="noItemsMessage">No Student Is Here</p></h2>
+    </main>
+
+    <footer>
+        <h3>&copy;2024</h3>
+        <button>Admin Log</button>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+/* General reset and layout */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(6, 46, 46); /* New background color */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header styling */
+header {
+    margin-top: 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header h3 {
+    font-size: 1.5rem;
+    font-style: bold;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.date-text {
+    margin-top: 1rem;
+    animation: fadeIn 4s ease-in-out;
+}
+
+.date-text h4 {
+    display: inline-block;
+    font-weight: 400;
+}
+
+/* Container styling */
+main.container {
+    width: 90%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Add and Search form styles */
+.container .addForm input,
+.container .searchForm input {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 1rem;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    border: 2px solid black;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hide the labels by positioning them off-screen */
+.addForm label,
+.searchForm label {
+    position: absolute;
+    left: -99999px;
+}
+
+/* Hover and focus effects */
+.container .addForm input:focus,
+.container .searchForm input:focus {
+    border-color: #00ff9d;
+    box-shadow: 0 0 10px rgba(0, 255, 157, 0.8);
+    outline: none;
+}
+
+.noItemsMessage {
+    color: #00ff9d;
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* List styles */
+ul#itemList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+ul#itemList li {
+    background-color: #1c4c4c;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 1.5s ease;
+    transition: transform 0.2s ease;
+}
+
+ul#itemList li:hover {
+    transform: scale(1.02);
+}
+
+ul#itemList li .handleSide {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+ul#itemList li .aAndRButton {
+    background-color: #00ff9d;
+    color: #06462e;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+ul#itemList li .aAndRButton:hover {
+    background-color: #00d482;
+}
+
+/* Button and Delete styles */
+ul#itemList li button {
+    background: transparent;
+    border: none;
+    color: red;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+ul#itemList li button:hover {
+    transform: scale(1.3);
+}
+
+/* Footer styling */
+footer {
+    padding: 1rem;
+    background-color: transparent ;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+footer h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+footer button {
+    background-color: #00ff9d;  /* Button background color */
+    color: #06462e;             /* Text color */
+    padding: 0.7rem 1.2rem;     /* Padding for a nice button size */
+    border: none;               /* Remove border */
+    border-radius: 5px;         /* Rounded corners */
+    cursor: pointer;            /* Pointer cursor on hover */
+    font-size: 1rem;            /* Font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+footer button:hover {
+    background-color: #00d482;  /* Darker shade on hover */
+    transform: scale(1.05);     /* Slightly enlarge the button */
+}
+
+footer button:active {
+    background-color: #00b76a;  /* Even darker shade when clicked */
+    transform: scale(1);        /* Reset size when clicked */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header h3 {
+        font-size: 1.2rem;
+    }
+
+    ul#itemList li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h3 {
+        font-size: 1rem;
+    }
+
+    ul#itemList li {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    ul#itemList li .handleSide {
+        gap: 0.5rem;
+    }
+}
